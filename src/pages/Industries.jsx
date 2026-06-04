@@ -6,15 +6,15 @@ import { ArrowRight, CheckCircle, AlertTriangle } from 'lucide-react';
 import PageHero from '@/components/shared/PageHero';
 import CTABand from '@/components/shared/CTABand';
 const IMAGES = {
-  heroTruck: '/images/hero/industries-hero.png',
-  constructionSite: '/images/industries/construction-site.png',
-  fleetYard: '/images/industries/fleet-yard.png',
-  industrialManufacturing: '/images/industries/industrial-manufacturing.png',
-  agriculture: '/images/industries/agriculture.png',
-  oilfield: '/images/industries/oilfield.png',
-  municipalVehicles: '/images/industries/municipal-vehicles.png',
-  generatorFueling: '/images/industries/generator-fueling.png',
-  commercialFacilities: '/images/industries/commercial-facilities.png',
+  heroTruck: '/images/hero/industries-hero.webp',
+  constructionSite: '/images/industries/construction-site.webp',
+  fleetYard: '/images/industries/fleet-yard.webp',
+  industrialManufacturing: '/images/industries/industrial-manufacturing.webp',
+  agriculture: '/images/industries/agriculture.webp',
+  oilfield: '/images/industries/oilfield.webp',
+  municipalVehicles: '/images/industries/municipal-vehicles.webp',
+  generatorFueling: '/images/industries/generator-fueling.webp',
+  commercialFacilities: '/images/industries/commercial-facilities.webp',
 
 };
 

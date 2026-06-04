@@ -13,7 +13,7 @@
 
 export const IMAGES = {
   // Hero / shared
-  heroTruck: '/images/hero/hero-truck.png',
+  heroTruck: '/images/hero/hero-truck.webp',
 
   // Products — dedicated product imagery
   dieselFuel: '/images/products/diesel-fuel.webp',
@@ -24,20 +24,20 @@ export const IMAGES = {
   fuelAdditives: '/images/products/fuel-additives.webp',
   bulkPetroleum: '/images/products/bulk-petroleum.webp',
   specialtyPetroleum: '/images/products/specialty-petroleum.webp',
-  storageTanks: '/images/products/storage-tanks.png',
+  storageTanks: '/images/products/storage-tanks.webp',
 
   // Services
-  tankerFilling: '/images/services/tanker-filling.png',
-  generatorFueling: '/images/services/generator-fueling.png',
-  driver: '/images/services/driver.png',
+  tankerFilling: '/images/services/tanker-filling.webp',
+  generatorFueling: '/images/services/generator-fueling.webp',
+  driver: '/images/services/driver.webp',
 
   // Industries
-  constructionSite: '/images/industries/construction-site.png',
-  fleetYard: '/images/industries/fleet-yard.png',
-  agriculture: '/images/industries/agriculture.png',
-  oilfield: '/images/industries/oilfield.png',
+  constructionSite: '/images/industries/construction-site.webp',
+  fleetYard: '/images/industries/fleet-yard.webp',
+  agriculture: '/images/industries/agriculture.webp',
+  oilfield: '/images/industries/oilfield.webp',
 
   // Backgrounds
-  houstonAerial: '/images/backgrounds/houston-aerial.png',
-  tomballCommercial: '/images/backgrounds/tomball-commercial.png',
+  houstonAerial: '/images/backgrounds/houston-aerial.webp',
+  tomballCommercial: '/images/backgrounds/tomball-commercial.webp',
 };

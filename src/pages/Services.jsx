@@ -6,18 +6,18 @@ import { CheckCircle, ArrowRight } from 'lucide-react';
 import PageHero from '@/components/shared/PageHero';
 import CTABand from '@/components/shared/CTABand';
 const IMAGES = {
-  heroTruck: '/images/hero/services-hero.png',
-  bulkfueldelivery: '/images/services/bulk-fuel-delivery.png',
-  fleetYard: '/images/services/fleet-yard.png',
-  jobSite: '/images/services/construction-site.png',
-  oilfield: '/images/services/generator-fueling.png',
-  driver: '/images/services/driver.png',
-  generatorFueling: '/images/services/generator-fueling.png',
-  emergencyFuel: '/images/services/emergency-fuel-support.png',
-  lubricants: '/images/services/lubricants.png',
-  dieselExhaustFluid: '/images/services/def.png',
-  fuelMonitoringSystem: '/images/services/fuel-monitoring-system.png',
-  storageTanks: '/images/services/storage-tanks.png',
+  heroTruck: '/images/hero/services-hero.webp',
+  bulkfueldelivery: '/images/services/bulk-fuel-delivery.webp',
+  fleetYard: '/images/services/fleet-yard.webp',
+  jobSite: '/images/services/construction-site.webp',
+  oilfield: '/images/services/generator-fueling.webp',
+  driver: '/images/services/driver.webp',
+  generatorFueling: '/images/services/generator-fueling.webp',
+  emergencyFuel: '/images/services/emergency-fuel-support.webp',
+  lubricants: '/images/services/lubricants.webp',
+  dieselExhaustFluid: '/images/services/def.webp',
+  fuelMonitoringSystem: '/images/services/fuel-monitoring-system.webp',
+  storageTanks: '/images/services/storage-tanks.webp',
 };
 
 

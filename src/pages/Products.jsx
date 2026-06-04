@@ -6,16 +6,16 @@ import { ArrowRight, CheckCircle } from 'lucide-react';
 import PageHero from '@/components/shared/PageHero';
 import CTABand from '@/components/shared/CTABand';
 const IMAGES = {
-  heroTruck: '/images/hero/products-hero.png',
-  dieselFuel: '/images/products/diesel-fuel.png',
-  offRoadDiesel: '/images/products/off-road-diesel.png',
-  gasoline: '/images/products/gasoline.png',
-  lubricants: '/images/products/lubricants.png',
-  dieselExhaustFluid: '/images/products/def.png',
-  fuelAdditives: '/images/products/fuel-additives.png',
-  bulkPetroleum: '/images/products/tanker-filling.png',
+  heroTruck: '/images/hero/products-hero.webp',
+  dieselFuel: '/images/products/diesel-fuel.webp',
+  offRoadDiesel: '/images/products/off-road-diesel.webp',
+  gasoline: '/images/products/gasoline.webp',
+  lubricants: '/images/products/lubricants.webp',
+  dieselExhaustFluid: '/images/products/def.webp',
+  fuelAdditives: '/images/products/fuel-additives.webp',
+  bulkPetroleum: '/images/products/tanker-filling.webp',
   
-  specialtyPetroleum: '/images/products/oilfield.png',
+  specialtyPetroleum: '/images/products/oilfield.webp',
 };
 
 

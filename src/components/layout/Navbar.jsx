@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-const LOGO_SRC = '/images/logo/mdx-fuel-logo.png';
+const LOGO_SRC = '/images/logo/mdx-fuel-logo.webp';
 
 const NAV_ITEMS = [
   { label: 'Home', path: '/' },

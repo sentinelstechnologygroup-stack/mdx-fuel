@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
 
-const LOGO_SRC = '/images/logo/mdx-fuel-logo.png';
+const LOGO_SRC = '/images/logo/mdx-fuel-logo.webp';
 
 const FOOTER_LINKS = {
   company: [
