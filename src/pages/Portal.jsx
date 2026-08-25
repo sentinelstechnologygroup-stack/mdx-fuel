@@ -7,10 +7,13 @@ import { Label } from '@/components/ui/label';
 
 export default function Portal() {
   const [showPassword, setShowPassword] = useState(false);
+  const atlasCrmUrl = import.meta.env.VITE_ATLAS_CRM_URL || 'https://mdx-fuel-atlas-crm.vercel.app/';
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Portal is not yet live — no backend action
+    // Authentication is handled by Atlas CRM. Never send portal credentials
+    // through the marketing site or store them in the browser.
+    window.location.assign(atlasCrmUrl);
   };
 
   return (
@@ -59,7 +62,7 @@ export default function Portal() {
           <div className="bg-accent/10 border border-accent/25 rounded-lg px-4 py-3 mb-6 flex items-start gap-3">
             <Shield className="w-4 h-4 text-accent shrink-0 mt-0.5" />
             <p className="text-white/70 text-xs leading-relaxed">
-              Portal access is currently reserved for approved users. Full FuelRoute OS dashboard access will be connected in a future release.
+              Atlas CRM is the secure workspace for approved MDX Fuel employees. Select Sign In to continue to the CRM login.
             </p>
           </div>
 
@@ -75,6 +78,7 @@ export default function Portal() {
                   <Input
                     id="portal-email"
                     type="email"
+                    autoComplete="username"
                     placeholder="you@company.com"
                     className="pl-10 h-11 bg-white/8 border-white/15 text-white placeholder:text-white/25 focus-visible:ring-accent focus-visible:border-accent"
                   />
@@ -90,6 +94,7 @@ export default function Portal() {
                   <Input
                     id="portal-password"
                     type={showPassword ? 'text' : 'password'}
+                    autoComplete="current-password"
                     placeholder="••••••••"
                     className="pl-10 pr-10 h-11 bg-white/8 border-white/15 text-white placeholder:text-white/25 focus-visible:ring-accent focus-visible:border-accent"
                   />
@@ -113,10 +118,14 @@ export default function Portal() {
             </form>
 
             <div className="mt-4 text-center">
-              <span className="text-white/35 text-xs cursor-default">
-                Forgot your password? Contact MDX Fuel for access support.
-              </span>
+              <span className="text-white/35 text-xs cursor-default">Forgot your password? Use the reset option on the Atlas CRM sign-in page.</span>
             </div>
+          </div>
+
+          <div className="mt-4 text-center">
+            <a href={atlasCrmUrl} className="text-accent hover:text-accent/80 text-xs transition-colors">
+              Open Atlas CRM directly →
+            </a>
           </div>
 
           {/* Need access CTA */}
