@@ -7,13 +7,41 @@ import { Label } from '@/components/ui/label';
 
 export default function Portal() {
   const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [isSigningIn, setIsSigningIn] = useState(false);
   const atlasCrmUrl = import.meta.env.VITE_ATLAS_CRM_URL || 'https://mdx-fuel-atlas-crm.vercel.app/';
+  const firebaseApiKey = 'AIzaSyAVLzfh6YrQgi_FFS6Ql8rPAPFX7f8SE3k';
+  const sessionExchangeUrl = 'https://us-central1-mdx-fuel-atlas-crm-dev.cloudfunctions.net/createAtlasPortalSession';
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Authentication is handled by Atlas CRM. Never send portal credentials
-    // through the marketing site or store them in the browser.
-    window.location.assign(atlasCrmUrl);
+    setError('');
+    setIsSigningIn(true);
+    try {
+      const authResponse = await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${firebaseApiKey}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email.trim(), password, returnSecureToken: true }),
+      });
+      const authPayload = await authResponse.json();
+      if (!authResponse.ok) throw new Error('Unable to sign in with that email and password.');
+
+      const exchangeResponse = await fetch(sessionExchangeUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ idToken: authPayload.idToken }),
+      });
+      const exchangePayload = await exchangeResponse.json();
+      if (!exchangeResponse.ok || !exchangePayload.customToken) {
+        throw new Error('This account is not authorized for the Atlas CRM.');
+      }
+      window.location.assign(`${atlasCrmUrl}?portalToken=${encodeURIComponent(exchangePayload.customToken)}`);
+    } catch (signInError) {
+      setError(signInError.message || 'Unable to sign in. Please try again.');
+      setIsSigningIn(false);
+    }
   };
 
   return (
@@ -69,6 +97,7 @@ export default function Portal() {
           {/* Login card */}
           <div className="bg-secondary/70 border border-white/10 rounded-xl p-7">
             <form onSubmit={handleSubmit} className="space-y-5">
+              {error && <p className="rounded-md border border-red-400/40 bg-red-500/10 px-3 py-2 text-sm text-red-200">{error}</p>}
               <div className="space-y-1.5">
                 <Label htmlFor="portal-email" className="text-white/75 text-sm font-medium">
                   Email Address
@@ -79,6 +108,9 @@ export default function Portal() {
                     id="portal-email"
                     type="email"
                     autoComplete="username"
+                    value={email}
+                    onChange={(event) => setEmail(event.target.value)}
+                    required
                     placeholder="you@company.com"
                     className="pl-10 h-11 bg-white/8 border-white/15 text-white placeholder:text-white/25 focus-visible:ring-accent focus-visible:border-accent"
                   />
@@ -95,6 +127,9 @@ export default function Portal() {
                     id="portal-password"
                     type={showPassword ? 'text' : 'password'}
                     autoComplete="current-password"
+                    value={password}
+                    onChange={(event) => setPassword(event.target.value)}
+                    required
                     placeholder="••••••••"
                     className="pl-10 pr-10 h-11 bg-white/8 border-white/15 text-white placeholder:text-white/25 focus-visible:ring-accent focus-visible:border-accent"
                   />
@@ -111,21 +146,16 @@ export default function Portal() {
 
               <Button
                 type="submit"
+                disabled={isSigningIn}
                 className="w-full h-11 bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-lg text-sm tracking-wide"
               >
-                Sign In
+                {isSigningIn ? 'Signing In…' : 'Sign In'}
               </Button>
             </form>
 
             <div className="mt-4 text-center">
-              <span className="text-white/35 text-xs cursor-default">Forgot your password? Use the reset option on the Atlas CRM sign-in page.</span>
+              <span className="text-white/35 text-xs cursor-default">Forgot your password? Use the reset option below after signing in.</span>
             </div>
-          </div>
-
-          <div className="mt-4 text-center">
-            <a href={atlasCrmUrl} className="text-accent hover:text-accent/80 text-xs transition-colors">
-              Open Atlas CRM directly →
-            </a>
           </div>
 
           {/* Need access CTA */}
