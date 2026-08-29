@@ -112,7 +112,7 @@ export default function Portal() {
                     onChange={(event) => setEmail(event.target.value)}
                     required
                     placeholder="you@company.com"
-                    className="pl-10 h-11 bg-white/8 border-white/15 text-white placeholder:text-white/25 focus-visible:ring-accent focus-visible:border-accent"
+                    className="pl-10 h-11 bg-white border-white/15 text-slate-900 placeholder:text-slate-500 focus-visible:ring-accent focus-visible:border-accent"
                   />
                 </div>
               </div>
@@ -131,7 +131,7 @@ export default function Portal() {
                     onChange={(event) => setPassword(event.target.value)}
                     required
                     placeholder="••••••••"
-                    className="pl-10 pr-10 h-11 bg-white/8 border-white/15 text-white placeholder:text-white/25 focus-visible:ring-accent focus-visible:border-accent"
+                    className="pl-10 pr-10 h-11 bg-white border-white/15 text-slate-900 placeholder:text-slate-500 focus-visible:ring-accent focus-visible:border-accent"
                   />
                   <button
                     type="button"
