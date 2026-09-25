@@ -5,15 +5,15 @@ import { Fuel, Truck, Building2, Cpu, AlertTriangle, Container, Zap, Droplets, A
 import SectionHeader from '@/components/shared/SectionHeader';
 
 const SERVICES = [
-  { icon: Fuel, title: 'Bulk Fuel Delivery', desc: 'High-volume diesel and gasoline delivery to your facility, fleet yard, or job site on your schedule.', path: '/services#bulk', color: 'text-amber-600' },
-  { icon: Truck, title: 'On-Site Fleet Fueling', desc: 'Mobile fueling for truck fleets and equipment yards — no detours, no downtime.', path: '/services#fleet', color: 'text-blue-600' },
-  { icon: Fuel, title: 'Diesel Fuel Delivery', desc: 'On-highway and off-road diesel delivered to construction sites, fleets, and industrial facilities.', path: '/services#bulk', color: 'text-amber-600' },
+  { icon: Fuel, title: 'Bulk Fuel Delivery', desc: 'Discuss diesel or gasoline supply for an on-site tank, fleet yard or facility.', path: '/fuel-services/bulk-fuel-delivery-houston', color: 'text-amber-600' },
+  { icon: Truck, title: 'On-Site Fleet Fueling', desc: 'Explore a fueling program designed around your fleet, yard and operating window.', path: '/fuel-services/fleet-fueling-houston', color: 'text-blue-600' },
+  { icon: Fuel, title: 'Diesel Fuel Delivery', desc: 'On-highway and off-road diesel options for qualifying commercial operations.', path: '/fuel-services/diesel-delivery-houston', color: 'text-amber-600' },
   { icon: Building2, title: 'Gasoline Delivery', desc: 'Regular and premium gasoline supply for mixed-fleet operations and commercial facilities.', path: '/services#bulk', color: 'text-steel' },
-  { icon: Droplets, title: 'Lubricants & Oils', desc: 'Motor oils, hydraulic fluids, gear oils, and greases delivered with your fuel or on a separate schedule.', path: '/services#lubricants', color: 'text-amber-700' },
-  { icon: Container, title: 'Diesel Exhaust Fluid', desc: 'DEF supply for modern diesel equipment — keeping your fleet compliant and running clean.', path: '/services#def', color: 'text-blue-500' },
-  { icon: Zap, title: 'Generator Fueling', desc: 'Reliable diesel delivery for standby generators — commercial buildings, data centers, and emergency backup systems.', path: '/services#generator', color: 'text-amber-500' },
+  { icon: Droplets, title: 'Lubricants & Oils', desc: 'Discuss product specifications, quantities and delivery formats for your equipment.', path: '/fuel-services/def-lubricant-delivery', color: 'text-amber-700' },
+  { icon: Container, title: 'Diesel Exhaust Fluid', desc: 'Ask about DEF supply formats and replenishment for commercial diesel operations.', path: '/fuel-services/def-lubricant-delivery', color: 'text-blue-500' },
+  { icon: Zap, title: 'Generator Fueling', desc: 'Plan refills for commercial standby generators; confirm urgent availability by phone.', path: '/fuel-services/generator-fueling-emergency-support', color: 'text-amber-500' },
   { icon: Cpu, title: 'Fuel Tanks & Equipment', desc: 'Storage tank supply, installation support, and on-site inventory monitoring solutions.', path: '/services#tanks', color: 'text-slate-500' },
-  { icon: AlertTriangle, title: 'Emergency Fuel Support', desc: 'Rapid-response fuel delivery for disaster recovery, storm prep, and critical infrastructure continuity.', path: '/services#emergency', color: 'text-orange-600' },
+  { icon: AlertTriangle, title: 'Emergency Fuel Support', desc: 'Call to assess product, location and delivery capacity for time-sensitive requests.', path: '/fuel-services/generator-fueling-emergency-support', color: 'text-orange-600' },
 ];
 
 export default function ServiceSnapshot() {

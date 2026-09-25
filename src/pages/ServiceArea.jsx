@@ -82,6 +82,8 @@ const PRIMARY_AREAS = [
   },
 ];
 
+const LOCATION_SLUGS = {Tomball:'tomball', Spring:'spring', 'The Woodlands':'the-woodlands', Cypress:'cypress', Conroe:'conroe'};
+
 const COUNTY_AREAS = [
   {
     name: 'Harris County',
@@ -191,6 +193,7 @@ export default function ServiceArea() {
                   </div>
                 </div>
                 <p className="text-muted-foreground text-sm leading-relaxed">{area.note}</p>
+                {LOCATION_SLUGS[area.name] && <Link to={`/fuel-delivery/${LOCATION_SLUGS[area.name]}`} className="inline-flex items-center gap-2 text-primary font-semibold text-sm mt-4 hover:text-accent">Explore {area.name} service <ArrowRight className="w-4 h-4" /></Link>}
               </motion.div>
             ))}
           </div>

@@ -22,9 +22,12 @@ const NAV_ITEMS = [
   {
     label: 'Services', path: '/services',
     children: [
-      { label: 'Bulk Fuel Delivery', path: '/services#bulk' },
-      { label: 'On-Site Fleet Fueling', path: '/services#fleet' },
-      { label: 'Generator Fueling', path: '/services#generator' },
+      { label: 'Diesel Delivery', path: '/fuel-services/diesel-delivery-houston' },
+      { label: 'Bulk Fuel Delivery', path: '/fuel-services/bulk-fuel-delivery-houston' },
+      { label: 'On-Site Fleet Fueling', path: '/fuel-services/fleet-fueling-houston' },
+      { label: 'Construction Fueling', path: '/fuel-services/construction-job-site-fueling' },
+      { label: 'Generator Fueling', path: '/fuel-services/generator-fueling-emergency-support' },
+      { label: 'DEF & Lubricants', path: '/fuel-services/def-lubricant-delivery' },
       { label: 'Emergency Fuel', path: '/services#emergency' },
       { label: 'Fuel Management', path: '/services#management' },
       { label: 'Tank & Equipment Support', path: '/services#tanks' },

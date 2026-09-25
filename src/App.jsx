@@ -24,6 +24,8 @@ import CookiePolicy from './pages/CookiePolicy';
 import SMSPolicy from './pages/SMSPolicy';
 import Sitemap from './pages/Sitemap';
 import Portal from './pages/Portal';
+import ServiceLanding from './pages/ServiceLanding';
+import LocationLanding from './pages/LocationLanding';
 
 function App() {
   return (
@@ -34,8 +36,10 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/fuel-services/:slug" element={<ServiceLanding />} />
             <Route path="/industries" element={<Industries />} />
             <Route path="/service-area" element={<ServiceArea />} />
+            <Route path="/fuel-delivery/:slug" element={<LocationLanding />} />
             <Route path="/about" element={<About />} />
             <Route path="/resources" element={<Resources />} />
             <Route path="/contact" element={<Contact />} />
