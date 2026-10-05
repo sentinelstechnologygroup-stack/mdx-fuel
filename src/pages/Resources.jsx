@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
-  FileText, ArrowRight, HelpCircle, Droplets, Zap, AlertTriangle,
-  CheckSquare, Users, Package, HardHat, Truck, MapPin, Settings, ClipboardList
+  FileText, ArrowRight, HelpCircle, Droplets, Zap, AlertTriangle, Users, Package, HardHat, MapPin, ClipboardList
 } from 'lucide-react';
 import PageHero from '@/components/shared/PageHero';
 import CTABand from '@/components/shared/CTABand';

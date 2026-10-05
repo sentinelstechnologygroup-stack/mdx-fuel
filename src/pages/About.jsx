@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Shield, CheckCircle, MapPin, ArrowRight } from 'lucide-react';
+import { Shield, CheckCircle, ArrowRight } from 'lucide-react';
 import PageHero from '@/components/shared/PageHero';
 import CTABand from '@/components/shared/CTABand';
 import SectionHeader from '@/components/shared/SectionHeader';
