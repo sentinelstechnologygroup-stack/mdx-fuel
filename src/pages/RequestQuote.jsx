@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { CheckCircle, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -31,8 +32,11 @@ const IMAGES = {
 
 
 export default function RequestQuote() {
+  const [searchParams] = useSearchParams();
   const [submitted, setSubmitted] = useState(false);
   const [agreed, setAgreed] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState('');
   const [form, setForm] = useState({
     name: '', company: '', phone: '', email: '',
     fuelType: '', lubrication: '', def: '',
@@ -40,6 +44,36 @@ export default function RequestQuote() {
     estimatedVolume: '', deliveryFrequency: '', urgency: '', notes: '',
   });
   const set = (k, v) => setForm(p => ({ ...p, [k]: v }));
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (!agreed || submitting) return;
+    setSubmitting(true);
+    setError('');
+    try {
+      const response = await fetch('https://formspree.io/f/mnjyqqke', {
+        method: 'POST',
+        headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...form,
+          requestedService: searchParams.get('service') || '',
+          requestedLocation: searchParams.get('location') || '',
+          landingPage: window.location.pathname,
+          utm_source: searchParams.get('utm_source') || '',
+          utm_medium: searchParams.get('utm_medium') || '',
+          utm_campaign: searchParams.get('utm_campaign') || '',
+          gclid: searchParams.get('gclid') || '',
+          consent: 'Yes', source: 'MDXFuel.com Fuel Delivery Request Builder',
+        }),
+      });
+      if (!response.ok) throw new Error('Quote submission failed');
+      setSubmitted(true);
+    } catch {
+      setError('We could not submit your request. Please call 1 (713) 333-FUEL (3835) so the MDX team can help you.');
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   return (
     <>
@@ -77,7 +111,8 @@ export default function RequestQuote() {
                   <strong className="text-foreground">Note:</strong> This form helps MDX Fuel understand your fuel delivery requirements. Submitting this form does not confirm delivery, pricing, or scheduling. A team member will follow up to discuss your request.
                 </p>
               </div>
-            <form onSubmit={e => { e.preventDefault(); setSubmitted(true); }} className="space-y-10">
+            <form onSubmit={handleSubmit} className="space-y-10">
+              {(searchParams.get('service') || searchParams.get('location')) && <p className="text-sm text-primary bg-accent/10 rounded-lg p-4">Inquiry for {[searchParams.get('service'),searchParams.get('location')].filter(Boolean).join(' in ')}. Please confirm your delivery address and product below.</p>}
               {/* Contact info */}
               <div>
                 <h3 className="font-heading text-xl text-primary tracking-wide mb-5 pb-3 border-b border-border">Contact Information</h3>
@@ -188,9 +223,10 @@ export default function RequestQuote() {
                 </div>
               </div>
 
-              <Button type="submit" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold px-8 py-3 rounded-lg gap-2 text-base">
+              {error && <p role="alert" className="text-red-700 bg-red-50 border border-red-200 rounded-lg p-4">{error}</p>}
+              <Button type="submit" disabled={submitting} className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold px-8 py-3 rounded-lg gap-2 text-base">
                 <Send className="w-5 h-5" />
-                Submit Fuel Delivery Request
+                {submitting ? 'Submitting...' : 'Submit Fuel Delivery Request'}
               </Button>
             </form>
             </div>

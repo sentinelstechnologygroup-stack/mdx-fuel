@@ -14,7 +14,7 @@ const SERVICES = [
     short: 'High-volume diesel, gasoline, and petroleum product delivery to commercial storage tanks and job site equipment.',
     helps: 'Fleets, industrial facilities, job sites',
     benefit: 'Consistent supply without managing your own logistics',
-    cta: '/request-quote',
+    cta: '/fuel-services/bulk-fuel-delivery-houston',
   },
   {
     icon: Calendar,
@@ -30,7 +30,7 @@ const SERVICES = [
     short: 'Fuel delivered directly to your fleet yard or staging area. Supports commercial vehicles, heavy equipment, and mixed-use fleets.',
     helps: 'Trucking companies, contractors, logistics operators',
     benefit: 'Eliminates driver time at retail fuel stops',
-    cta: '/services#fleet',
+    cta: '/fuel-services/fleet-fueling-houston',
   },
   {
     icon: HardHat,
@@ -38,7 +38,7 @@ const SERVICES = [
     short: 'Off-road diesel, on-road diesel, and petroleum products delivered to active construction, energy, and industrial job sites.',
     helps: 'General contractors, earthwork crews, energy operators',
     benefit: 'Equipment stays running — fuel comes to your site',
-    cta: '/services#jobsite',
+    cta: '/fuel-services/construction-job-site-fueling',
   },
   {
     icon: Zap,
@@ -46,7 +46,7 @@ const SERVICES = [
     short: 'Diesel delivery to backup generators for commercial facilities, data centers, hospitals, and critical infrastructure.',
     helps: 'Facility managers, industrial operators, municipalities',
     benefit: 'Generator tanks maintained before and during outages',
-    cta: '/services#generator',
+    cta: '/fuel-services/generator-fueling-emergency-support',
   },
   {
     icon: AlertTriangle,
@@ -62,7 +62,7 @@ const SERVICES = [
     short: 'Commercial motor oils, hydraulic fluids, gear oils, and greases for fleet, industrial, and equipment maintenance programs.',
     helps: 'Fleets, maintenance shops, industrial facilities',
     benefit: 'Single-source petroleum procurement with fuel orders',
-    cta: '/products#lubricants',
+    cta: '/fuel-services/def-lubricant-delivery',
   },
   {
     icon: Package,
@@ -70,7 +70,7 @@ const SERVICES = [
     short: 'Diesel exhaust fluid supply for Tier 4 and SCR-equipped diesel engines. Bulk and packaged available for qualifying customers.',
     helps: 'Modern diesel fleets and equipment operators',
     benefit: 'Prevents DEF-related engine shutdowns and compliance issues',
-    cta: '/products#def',
+    cta: '/fuel-services/def-lubricant-delivery',
   },
   {
     icon: Settings,

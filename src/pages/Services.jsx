@@ -56,7 +56,7 @@ const SERVICES = [
     image: IMAGES.generatorFueling,
     description: 'Backup generators are only as reliable as their fuel supply. MDX Fuel provides diesel delivery for standby and prime-power generators at commercial buildings, data centers, healthcare facilities, emergency response operations, and industrial sites. We support both routine tank maintenance and emergency pre-storm fueling.',
     whoItHelps: ['Commercial building owners and managers', 'Data centers and co-location facilities', 'Healthcare and emergency services', 'Industrial facilities with backup power systems'],
-    benefits: 'When the grid goes down, your generator needs to be ready. MDX Fuel ensures your tank is full before storm season and responds quickly when demand increases.',
+    benefits: 'Discuss planned refills before storm season. Urgent delivery depends on location, product availability and MDX capacity; call to confirm options.',
   },
   {
     id: 'emergency',
@@ -65,7 +65,7 @@ const SERVICES = [
     image: IMAGES.emergencyFuel,
     description: 'Natural disasters, severe weather, infrastructure failures, and operational emergencies create immediate fuel demand. MDX Fuel provides emergency fuel delivery to support disaster recovery operations, continuity-of-operations planning, and critical infrastructure fueling during high-demand events.',
     whoItHelps: ['Emergency management operations', 'Critical infrastructure operators', 'Commercial businesses during weather events', 'Industrial facilities in recovery mode'],
-    benefits: 'Rapid response when it matters most. MDX Fuel is a local Texas operation — positioned to serve Greater Houston markets during regional weather and disaster events where national suppliers cannot respond.',
+    benefits: 'A local contact for time-sensitive requests. Dispatch will confirm whether the product, route and delivery window can be supported.',
   },
   {
     id: 'lubricants',
