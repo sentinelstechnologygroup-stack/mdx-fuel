@@ -18,7 +18,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: npm
 
       - name: Install dependencies
@@ -26,6 +26,27 @@ jobs:
 
       - name: Build static site
         run: npm run build
+
+      - name: Verify InMotion deployment configuration
+        env:
+          INMOTION_SFTP_USERNAME: ${{ secrets.INMOTION_SFTP_USERNAME }}
+          INMOTION_SFTP_HOST: ${{ secrets.INMOTION_SFTP_HOST }}
+          INMOTION_SFTP_PRIVATE_KEY: ${{ secrets.INMOTION_SFTP_PRIVATE_KEY }}
+          INMOTION_SFTP_PORT: ${{ secrets.INMOTION_SFTP_PORT || 22 }}
+        shell: bash
+        run: |
+          missing=0
+          for name in INMOTION_SFTP_USERNAME INMOTION_SFTP_HOST INMOTION_SFTP_PRIVATE_KEY; do
+            if [ -z "${!name}" ]; then
+              echo "::error::Required repository secret $name is missing."
+              missing=1
+            fi
+          done
+          if ! [[ "$INMOTION_SFTP_PORT" =~ ^[0-9]+$ ]] || [ "$INMOTION_SFTP_PORT" -lt 1 ] || [ "$INMOTION_SFTP_PORT" -gt 65535 ]; then
+            echo "::error::INMOTION_SFTP_PORT must be a valid port number."
+            missing=1
+          fi
+          exit "$missing"
 
       - name: Deploy dist to InMotion over SFTP
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4

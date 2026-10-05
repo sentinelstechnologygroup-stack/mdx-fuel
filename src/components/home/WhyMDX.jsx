@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Shield, Repeat, Package, MessageSquare, TrendingUp, CheckCircle } from 'lucide-react';
+import { MapPin, Shield, Repeat, Package, MessageSquare, TrendingUp, CheckCircle } from 'lucide-react';
 import SectionHeader from '@/components/shared/SectionHeader';
 import { IMAGES } from '@/lib/images';
 

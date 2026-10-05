@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import SectionHeader from '@/components/shared/SectionHeader';
-import { IMAGES } from '@/lib/images';
 
 const PRODUCTS = [
   { title: 'Diesel Fuel', desc: 'On-highway diesel for commercial fleets, transportation, and heavy equipment.', badge: 'High Volume', path: '/products#diesel' },
